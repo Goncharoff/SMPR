@@ -3,4 +3,4 @@
 
 Будем проверять результаты работы на 10, 75, 230, 275 шаге стохастического градиентного спуска. В реузльтате получим:
 
-### ![](https://github.com/Mr-revi4/SMDMhomework/blob/master/imgs/img1.jpg?raw=true)
+### ![](https://github.com/Goncharoff/SMPR/blob/master/image?raw=true)
