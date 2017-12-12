@@ -3,4 +3,4 @@
 
 Будем проверять результаты работы на 10, 75, 230, 275 шаге стохастического градиентного спуска. В реузльтате получим:
 
-### ![]https://github.com/Goncharoff/SMPR/blob/master/perceptron.png?raw=true)
+### ![]https://github.com/Goncharoff/SMPR/blob/master/perceptron?raw=true)
