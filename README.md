@@ -1,6 +1,6 @@
 #### Перцептрон Розенблата
-Будем ипсользовать virginica и versicolor. По 3 и 4 параметрам datafram'аю
+Будем ипсользовать virginica и versicolor. По 3 и 4 параметрам datafram'а
 
 Будем проверять результаты работы на 10, 75, 230, 275 шаге стохастического градиентного спуска. В реузльтате получим:
 
-### ![](https://github.com/Goncharoff/SMPR/blob/master/image?raw=true)
+### ![]https://github.com/Goncharoff/SMPR/blob/master/perceptron.png?raw=true)
