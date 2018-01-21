@@ -1,3 +1,16 @@
+trainingSampleNormalization <-function(xl){
+  n <- dim(xl)[2] -1
+  for(i in 1:n) 
+  {
+    xl[, i] <-(xl[, i] - mean(xl[, i])) / sd(xl[, i]) 
+  }
+  return (xl)
+}
+trainingSamplePrepare <-function(xl){
+  l <- dim(xl)[1]
+  n <- dim(xl)[2]-1
+  xl <- cbind(xl[, 1:n], seq(from = -1, to =-1, length.out = 1), xl[, n + 1])
+}
 
 ## Логарифмическая функция потерь
 lossLog<-function(x)
@@ -15,9 +28,9 @@ sg.LogRegression <-function(xl)
     l <-dim(xl)[1]
     n <-dim(xl)[2]-1  
     result_log <- list()
-    w <-c(1/2, 1/2, 1/2)
+    w <-c(1 / 2, 1 / 2, 1 / 2)
     iterCount <-0
-    lambda <-1/l
+    lambda <- 1/l
     ## initialize Q
     Q <- 0
     for (i in 1:l)
@@ -74,10 +87,10 @@ xlNorm <-trainingSamplePrepare(xlNorm)
 ## Логистическая регрессия
 w_log <-sg.LogRegression(xlNorm)
 
-a_log = seq(1,length(w))*0
-b_log = seq(1, length(w))*0
+a_log = seq(1,length(w_log))*0
+b_log = seq(1, length(w_log))*0
 
-for(i in 1:length(w)){
+for(i in 1:length(w_log)){
   a_log[i] = w_log[[i]][3] / w_log[[i]][2] 
   b_log[i] = -w_log[[i]][1] / w_log[[i]][2]
 }
