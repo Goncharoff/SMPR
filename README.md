@@ -1,3 +1,18 @@
+### Adaline
+  Алгоритм классификации ADALINE— адаптивны линейный элемент, в качестве функции потерь используется квадратичная функция потерь:
+![equation](http://latex.codecogs.com/gif.latex?(<w,x>&space;-&space;y_i)^2)
+ Алгоритм обучается с помошью стохастического градиента.
+
+  Обучение ADALINE заключается в подборе "наилучших" значений вектора весов w. Какие значение весов лучше определяет функционал потерь. В ADALINE используется функционал, предложенный Видроу и Хоффом, ![equation](http://latex.codecogs.com/gif.latex?L(a,x)&space;=&space;(a-y)^2). Таким образом необходимо минимизировать функционал ![equation](http://latex.codecogs.com/gif.latex?L(a,x)&space;=&space;Q(w)): 
+
+![equation](http://latex.codecogs.com/gif.latex?$$Q(w)=&space;\sum^m_{i=1}{(a(x_i,w)-y_i)^2}\rightarrow&space;min_w$$).
+Построим алгоритм на классификации ирисов Фишера, с классами virginica и versicolo по 3 и 4 параметрам datafram'а. Проверим 
+работу алгоритма на 2,5,10 и 43 шагах стохастического градиента. Получим: 
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/adadline_result.png)
+
+Линия на графике - разделяющая гиперплоскость. Оптимум достигается на 43'ом шаге.
+Веса получились равны: w_1 = 3.24, w_2 = -1.7
+
 #### Перцептрон Розенблата
 Будем ипсользовать virginica и versicolor. По 3 и 4 параметрам datafram'а
 
@@ -7,6 +22,4 @@
 
 Линия на графике - раздиляющая гиперплоскость. Оптимум достигается при 275'ом шаге.
 В результате получили веса, равные w_1 = -102.9, w_2 = 152.1, w_3 = 119.
-![equation](http://latex.codecogs.com/gif.latex?$$x^3&space;$$)
 
-![equation](http://latex.codecogs.com/gif.latex?P%28s%20%7C%20O_t%20%29%3D%5Ctext%20%7B%20Probability%20of%20a%20sensor%20reading%20value%20when%20sleep%20onset%20is%20observed%20at%20a%20time%20bin%20%7D%20t)
