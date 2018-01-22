@@ -16,7 +16,7 @@
  kNN — один из простейших алгоритмов классификации, поэтому на реальных задачах он зачастую оказывается неэффективным. Помимо точности классификации, проблемой этого классификатора является скорость классификации: если в обучающей выборке N объектов, в тестовой выборе M объектов, а размерность пространства — K, то количество операций для классификации тестовой выборки может быть оценено как O(K*M*N).
 
 Карта классификации для kNN:  
-![](https://github.com/Goncharoff/SMPR/blob/master/imgs/map_kNN.png)
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/map_knn.png)
 ### kwNN
 Алогоритм k взвешенных ближайших соседей:
 ![equation](http://latex.codecogs.com/gif.latex?w(i,&space;u)&space;=&space;[i&space;\leq&space;k]w(i);&space;a(u;&space;X^l,&space;k)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum^k_{i&space;=&space;1}{[y^i_{u}&space;=&space;y]}w(i))
