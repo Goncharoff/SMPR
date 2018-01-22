@@ -43,7 +43,8 @@ rxp <- round(range(xp),0)+c(-1,1)
 xpn <- subset(xp,Y==-1)
 xpp <- subset(xp,Y==+1)
 b = (mean(xpp) * sd(xpn) + mean(xpn) * sd(xpp)) /(sd(xpp) + sd(xpn))
-plot(x,col=Y+3,asp=1)
+plot(x,col=Y+3,asp=1, xlab = "Sepal.Length",
+     ylab = "Sepal.Width", main = paste("LDF"))
 par(lwd=2)
 abline(b/muv[2],-muv[1]/muv[2])
 distance.from.plane = function(x,w,b) {
