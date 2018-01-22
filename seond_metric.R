@@ -182,4 +182,5 @@ mapIris <- function(classifier, argsList){
 }
 
 mapIris(kNNClassifier,  list(trainSet=etalons, k = 6))
-         
+mapIris(kWNNClassifier,  list(trainSet=etalons, k = 6, q = 1))
+mapIris(parzenClassifier,  list(trainSet=etalons, k = 6))
