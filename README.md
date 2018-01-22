@@ -76,4 +76,17 @@
 Будем ипсользовать virginica и versicolor. По 3 и 4 параметрам datafram'а
 
 В результате получим: 
-![](https://github.com/Goncharoff/SMPR/blob/master/imgs/SVM_resuls.png)
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/SVM_resul.png)
+Благодоря библиотеке kernlab выведем также полученный результат:
+Support Vector Machine object of class "ksvm" 
+
+SV type: C-svc  (classification) 
+ parameter : cost C = 1 
+
+Gaussian Radial Basis kernel function. 
+ Hyperparameter : sigma =  2.22977846013437 
+
+Number of Support Vectors : 30 
+
+Objective Function Value : -8.5529 
+Training error : 0 
