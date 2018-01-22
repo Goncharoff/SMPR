@@ -167,6 +167,19 @@ LOO <- function(classifier, classifierArgs, dataSet, paramName, paramRange){
   return(bestParam)
 }
 #LOO(kNNClassifier, list(trainSet=iris[,3:5]), iris[,3:5], "k", 6:6)
-LOO(kWNNClassifier, list(trainSet=etalons), iris[,3:5], c("k","q"), c(1:6,seq(0.01, 1, 0.01)))
+#LOO(kWNNClassifier, list(trainSet=etalons), iris[,3:5], c("k","q"), c(1:6,seq(0.01, 1, 0.01)))
 
-    
+mapIris <- function(classifier, argsList){
+  plot(iris[,3:4], pch=21, bg=colors1[iris$Species], col=colors1[iris$Species])
+  xSteps = seq(1,7,0.1) # seq(0,1,0.02) if normalized
+  ySteps = seq(0.1,2.5,0.1)
+  for(x in xSteps)
+    for(y in ySteps){
+      currentArgs = c(list(u=c(x,y)), argsList)
+      lbl = do.call(classifier, currentArgs)
+      points(x, y, bg=colors2[lbl], col=colors2[lbl])
+    }
+}
+
+mapIris(kNNClassifier,  list(trainSet=etalons, k = 6))
+         
