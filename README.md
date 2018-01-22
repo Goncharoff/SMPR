@@ -1,3 +1,16 @@
+# Метрические алгоритмы классификации
+ Алгоритм k ближайших соседей - kNN относит объект u к тому классу элементов которого больше среди k ближайших соседей 
+![equation]http://latex.codecogs.com/gif.latex?x_u^{i},&space;i=1,...,k:
+
+![equation]http://latex.codecogs.com/gif.latex?w(i,&space;u)&space;=&space;[i&space;\leq&space;k];&space;a(u;&space;X^l,&space;k)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum^k_{i&space;=&space;1}{[y^i_{u}&space;=&space;y]}
+
+Применив kNN и LOO к датасету Ириса Фишера получим результат:
+
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/LOO_kNN.png)
+
+Видно, что лучишй результат получаем при k = 6, с оценкой ошибки равной 0.33, что равно 96% успешных классификаций.
+Для выбора оптимального k используют метод скользащего контроля (LOO)
+
 # Линейные классификаторы
 ### Adaline
   Алгоритм классификации ADALINE— адаптивны линейный элемент, в качестве функции потерь используется квадратичная функция потерь:
