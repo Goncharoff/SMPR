@@ -60,5 +60,5 @@ LOOforkwNN <- function(classificator){
 arr <- LOOforkwNN(kwNN)
 tochka = which(arr == min(arr))
 arr2 <- (seq(from = 0.0, to = 1.0, by = 0.05))
-plot(arr2, arr, type = "l", xlab = "q", ylab="LOO value", main = "LOO kwNN")
+plot(arr2, arr, type = "l", xlab = "q", ylab="LOO value", main = "LOO kwNN, with k = 6")
 points(arr2[tochka], arr[tochka], pch = 19, col = "red")

@@ -15,6 +15,6 @@ dc[dd$Species == "virginica"] <- -1
 
 library(kernlab)
 ## Another example with the famous iris data
-svp = ksvm(dm,dc,type="C-svc", kernel = "splinedot")
+svp = ksvm(dm,dc,type="C-svc")
 plot(svp, data=dm)
 svp
