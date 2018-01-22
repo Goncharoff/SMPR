@@ -15,6 +15,8 @@
 
  kNN — один из простейших алгоритмов классификации, поэтому на реальных задачах он зачастую оказывается неэффективным. Помимо точности классификации, проблемой этого классификатора является скорость классификации: если в обучающей выборке N объектов, в тестовой выборе M объектов, а размерность пространства — K, то количество операций для классификации тестовой выборки может быть оценено как O(K*M*N).
 
+Карта классификации для kNN:  
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/map_kNN.png)
 ### kwNN
 Алогоритм k взвешенных ближайших соседей:
 ![equation](http://latex.codecogs.com/gif.latex?w(i,&space;u)&space;=&space;[i&space;\leq&space;k]w(i);&space;a(u;&space;X^l,&space;k)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum^k_{i&space;=&space;1}{[y^i_{u}&space;=&space;y]}w(i))
@@ -22,6 +24,11 @@
 ![](https://github.com/Goncharoff/SMPR/blob/master/imgs/loo_kwnn.png)
 Видем что лучший результат при k = 6 и q = 1. Равен 0.33, что примерно 96% успешных классификаций.
 Зачем использовать kwNN если там больше расчетов? В задачах с числом классов 3 и более нечётность уже не помогает и сутации неодназначности могут возниктаь. Тогда на помошь приходят веса, и объект классифицируется к тому классу, чей суммарны вес больше среди k соседий.
+
+
+Карта классификации для kWNN:  
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/map_kWNN.png)
+
 ### Парзеновские окна
 Рассмотрим весовую функцию w(i,u) как функцию не от ранга соседа, а как функцию от расстояния 
 ![equation](http://latex.codecogs.com/gif.latex?\rho(u,x_u^i):)
@@ -36,6 +43,10 @@
 ![](https://github.com/Goncharoff/SMPR/blob/master/imgs/loo_parsen_results.png)
 
 Красные точки на изображениях - оптимальные h для выбора. Итоговый результат получился чуть лучше чем при kwNN и kNN и равен - 97% при гауссовском ядре и ядре епачникова.
+
+
+Карта классификации для парзеновского окна с ядром епачникова:  
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/map_parzen.png)
 ### Потенциальные функции 
 Если в методе парзеновского окна центр окна поместить в классифицируемый объект, то получим метод потенциальных функций:
 ![equation](http://latex.codecogs.com/gif.latex?a(u;X^l)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum_{i:y_u^i=y}{\gamma_i&space;K(\frac{\rho(u,x_i)}{h_i})},&space;\gamma_i&space;\geq&space;0,&space;h_i&space;>&space;0)
