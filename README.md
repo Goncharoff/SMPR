@@ -103,7 +103,19 @@ Petal.Length Petal.Width    Species
 
 Проверяя на них kNN получим такой же результат, в k=6, с успешной долей ответов 96%. Но по сравнению с обычной kNN намного быстрее.(очевидно, ведь выборка уменьшилась).
 # Байесовские алгоритмы классификации
-Линейный дискриминант Фишера 
+### Линии уровня 
+1) Если признаки некоррелированы, ![equation](http://latex.codecogs.com/gif.latex?\sum&space;=&space;diag(\sigma_1^2,...,\sigma_1^2)), то линии уровня плотности распределения имеют форму эллипсоидов с центром ![equation](http://latex.codecogs.com/gif.latex?\mu))
+
+2) Если признаки имеют одинаковые дисперсии, ![equation](http://latex.codecogs.com/gif.latex?\sum&space;=&space;\sigma^2I_n)
+
+3)Если признаки коррелированы, то матрица ![equation](http://latex.codecogs.com/gif.latex?\sum) не диагональна и линии уровня имеют форму эллипсоидов, оси которых повернуты ( направлены вдоль собственных векторов матрицы ![equation](http://latex.codecogs.com/gif.latex?\sum) ) относительно исходной системы координат.
+
+С помощью ортогонального преобразования ![equation](http://latex.codecogs.com/gif.latex?x'=V^Tx,&space;V&space;=&space;(v_1,...,v_n)). - ортогональные собственные векторы матрицы ![equation](http://latex.codecogs.com/gif.latex?\sum), можно перейти к первому случаю.
+
+Результат реализации линий уровня для нормального распределения: 
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/lines_result.png)
+
+### Линейный дискриминант Фишера 
 Пусть ковариационные матрицы классов одинаковы и равны ![equation](http://latex.codecogs.com/gif.latex?\sum). Оценим ![equation](http://latex.codecogs.com/gif.latex?\sum^{-}) по всем l объектам обучающей выборке. С учетом поправки на смещённость,
 
 ![equation](http://latex.codecogs.com/gif.latex?\sum^{-}&space;=&space;\frac{1}{l-|Y|}\sum_{i=1}^l&space;(x_i&space;-&space;\mu^{-}_{y_i})(x_i&space;-&space;\mu^{-}_{y_i})^T)
