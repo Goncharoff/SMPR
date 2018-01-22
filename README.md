@@ -7,6 +7,4 @@
 
 Линия на графике - раздиляющая гиперплоскость. Оптимум достигается при 275'ом шаге.
 В результате получили веса, равные w_1 = -102.9, w_2 = 152.1, w_3 = 119.
-\begin{equation}
-\sum_{\forall i}{x_i^{2}} 
-\end{equation}
+[!equation](http://latex.codecogs.com/gif.latex?$$x^3&space;$$)
