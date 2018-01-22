@@ -5,7 +5,7 @@
 
   Обучение ADALINE заключается в подборе "наилучших" значений вектора весов w. Какие значение весов лучше определяет функционал потерь. В ADALINE используется функционал, предложенный Видроу и Хоффом, ![equation](http://latex.codecogs.com/gif.latex?L(a,x)&space;=&space;(a-y)^2). Таким образом необходимо минимизировать функционал ![equation](http://latex.codecogs.com/gif.latex?L(a,x)&space;=&space;Q(w)): 
 
-![equation](http://latex.codecogs.com/gif.latex?Q(w)=&space;\sum^m_{i=1}{a(x_i,w)-y_i)^2}&space;\rightarrow&space;min_w).
+![equation](http://latex.codecogs.com/gif.latex?Q(w)=&space;\sum^m_{i=1}{a(x_i,w)-y_i)^2}).
 
 Построим алгоритм на классификации ирисов Фишера, с классами virginica и versicolo по 3 и 4 параметрам datafram'а. Проверим 
 работу алгоритма на 2,5,10 и 43 шагах стохастического градиента. Получим: 
