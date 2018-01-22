@@ -43,6 +43,23 @@
 Реализован с помошью библиотека "plotrix". Получим:
 ![](https://github.com/Goncharoff/SMPR/blob/master/imgs/pot_func_result.jpg)
 Результат - 97% успещных классификаций.
+### Байесовские алгоритмы классификации
+Линейный дискриминант Фишера 
+Пусть ковариационные матрицы классов одинаковы и равны ![equation](http://latex.codecogs.com/gif.latex?\sum). Оценим ![equation](http://latex.codecogs.com/gif.latex?\sum^{-}) по всем l объектам обучающей выборке. С учетом поправки на смещённость,
+
+![equation](http://latex.codecogs.com/gif.latex?\sum^{-}&space;=&space;\frac{1}{l-|Y|}\sum_{i=1}^l&space;(x_i&space;-&space;\mu^{-}_{y_i})(x_i&space;-&space;\mu^{-}_{y_i})^T)
+
+В этом случае разделяющая поверхность линейна. Подстановочный алгоритм имеет вид:
+
+![equation](http://latex.codecogs.com/gif.latex?a(x)=argmax_{y\epsilon&space;Y}\lambda_y&space;P_y&space;\rho_y&space;(x)&space;=&space;argmax_{y\epsilon&space;Y}&space;(\ln&space;(\lambda_y&space;P_y)&space;-&space;\frac{1}{2}&space;\mu_y^{T}&space;\sum^{-1}&space;\mu_y&space;&plus;&space;x^{T}&space;\sum^{-1}&space;\mu_y))
+Этот алгоритм называется линейным дискриминантом Фишера (ЛДФ). Он неплохо работает, когда формы классов действительно близки к нормальным и не слишком сильно различаются. В этом случае линейное решающее правило близко к оптимальному байесовскому, но существенно более устойчиво, чем квадратичное, и часто обладает лучшей обобщающей способностью.
+Вероятность ошибки линейного дискриминанта Фишера выражается через расстояние Махаланобиса между классами, в случае, когда классов два:
+![equation](http://latex.codecogs.com/gif.latex?R(a)&space;=&space;\Phi&space;(-\frac{1}{2}||\mu_1&space;-&space;\mu_2||_{\sum}))
+где ![equation]http://latex.codecogs.com/gif.latex?\Phi&space;(x)&space;=&space;N(x;0,1) - функция стандартного нормального распределения.
+Возьмем наш датасет ирисов, где   setosa и versicolor будут одним классом, а virginica другой. Классифицировать будем по Petal.Length и Petal.Width. 
+В этом случае итоговый результат изобразим на графике:
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/lda_result.jpg).
+
 # Линейные классификаторы
 ### Adaline
   Алгоритм классификации ADALINE— адаптивны линейный элемент, в качестве функции потерь используется квадратичная функция потерь:
