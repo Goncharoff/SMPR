@@ -81,11 +81,11 @@ for(i in 1:50){
   dm[i,3] = -1
 }
 ## Нормализация данных
-xlNorm <-trainingSampleNormalization(dm)
-xlNorm <-trainingSamplePrepare(xlNorm)
+xlNorml <-trainingSampleNormalization(dm)
+xlNorml <-trainingSamplePrepare(xlNorm)
 
 ## Логистическая регрессия
-w_log <-sg.LogRegression(xlNorm)
+w_log <-sg.LogRegression(xlNorml)
 
 a_log = seq(1,length(w_log))*0
 b_log = seq(1, length(w_log))*0
@@ -99,9 +99,9 @@ steps_b_log <- c(b_log[2], b_log[5], b_log[10], b_log[length(b_log)])
 steps_log <- c(2,5,10,length(a_log))
 par(mfrow=c(2,2))
 for (i in 1:4){
-  plot(xlNorm[, 1], xlNorm[, 2], pch = ifelse(xlNorm[,4] > 0, 2, 1), asp = 1, xlab = "Nornolized Sepal.Length",
+  plot(xlNorml[, 1], xlNorml[, 2], pch = ifelse(xlNorml[, 3] > 0, 2, 1), asp = 1, xlab = "Nornolized Sepal.Length",
        ylab = "Normolized Sepal.Width", main = paste("step", steps_log[i]), sub=paste(a_log[i], b_log[i], collapse=' '))
-  abline(steps_a_log[i], steps_b_log[i], col="blue")
+  abline(steps_a_log[i], steps_b_log[i], col="red")
 }
 
 #abline(steps_a[4], steps_b[4], col="blue")
