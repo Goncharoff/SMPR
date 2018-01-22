@@ -102,7 +102,7 @@ points(z[1], z[2], pch = 22, bg = colors[class], col = colors[class], asp = 1, l
 
 ##########################   OKNA #####################################
 
-#прямоугольное
+#РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРµ РѕРєРЅРѕ
 u_func <- function(rast, h) {
   if(abs(rast/h) <= 1){
       return (0.5)
@@ -110,7 +110,7 @@ u_func <- function(rast, h) {
       return(0)
   }
 }
-#епачникова
+#СЏРґСЂРѕ РµРїР°С‡РЅРёРєРѕРІР°
 func_epanechnikov <-function(rast, h){
   if(abs(rast/h) <= 1){
     return(3/4 * (1 - (rast/h)^2))
@@ -118,7 +118,7 @@ func_epanechnikov <-function(rast, h){
     return(0)
   }
 }
-#квадратичное
+#РєРІР°РґСЂР°С‚РЅРѕРµ СЏРґСЂРѕ
 func_kvadrat <-function(rast, h){
   if(abs(rast/h) <= 1){
     return(15/16 * (1 - (rast/h)^2)^2)
@@ -126,7 +126,7 @@ func_kvadrat <-function(rast, h){
     return(0)
   }
 }
-#треугольное
+#СЏРґСЂРѕ С‚СЂРµСѓРіРѕР»СЊР»РЅРёРєР°
 func_treyg <-function(rast, h){
   if(abs(rast/h) <= 1){
     return(1-abs(rast/h))
@@ -134,8 +134,7 @@ func_treyg <-function(rast, h){
     return(0)
   }
 }
-#гаусовское
-
+#СЏРґСЂРѕ РіР°СѓСЃСЃРѕРІСЃРєРѕРµ
 funk_gaus <- function(rast, h){
   if(abs(rast/h) <= 1){
     return ( (2*pi)^(-1/2) * exp(-1/2 * (rast/h)^2 ) )
@@ -144,7 +143,7 @@ funk_gaus <- function(rast, h){
   }
 }
 
-#LOO для окна, принимает классификатор и функцию ядра
+#LOO classifaer 
   LOO <- function(classificator, fanc){ 
     vec <- c(seq(1, 45)) 
     tmp <- 1
@@ -204,23 +203,23 @@ tochka_prjamoygolnoe =  which(LOO_pramoygolnik == min(LOO_pramoygolnik) )
 
 par(mfrow=c(3,2))
 
-plot(h_vect,LOO_pramoygolnik, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "Прямоугольное ядро")
+plot(h_vect,LOO_pramoygolnik, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "????????????? ????")
 axis(1, at = seq(0.5, 5, by = 0.1), las=1)
 points(h_vect[tochka_prjamoygolnoe], LOO_pramoygolnik[tochka_prjamoygolnoe], col="red", pch = 19)
 
-plot(h_vect,LOO_epachnikov, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "Ядро Епанечникова")
+plot(h_vect,LOO_epachnikov, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "???? ????????????")
 axis(1, at = seq(0.5, 5, by = 0.1), las=1)
 points(h_vect[tochka_epachnikova], LOO_epachnikov[tochka_epachnikova], col="red", pch = 19)
 
-plot(h_vect,LOO_kavdrat, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "Ядро квадратичое")
+plot(h_vect,LOO_kavdrat, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "???? ???????????")
 axis(1, at = seq(0.5, 5, by = 0.1), las=1)
 points(h_vect[tochka_kvarticheskoe], LOO_kavdrat[tochka_kvarticheskoe], col="red", pch = 19)
 
 
-plot(h_vect,LOO_gaus, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "Ядро Гаусса")
+plot(h_vect,LOO_gaus, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "???? ??????")
 axis(1, at = seq(0.5, 5, by = 0.1), las=1)
 points(h_vect[tochka_gauss], LOO_gaus[tochka_gauss], col="red", pch = 19)
 
-plot(h_vect,LOO_treug, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "Ядро треугольное")
+plot(h_vect,LOO_treug, type = "l", xaxt="n", xlab = "h value", ylab = "Error value", main = "???? ???????????")
 axis(1, at = seq(0.5, 5, by = 0.1), las=1)
 points(h_vect[tochka_treygolnoe], LOO_treug[tochka_treygolnoe], col="red", pch = 19)
