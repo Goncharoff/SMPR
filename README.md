@@ -16,7 +16,7 @@
 
 Алогоритм k взвешенных ближайших соседей:
 ![equation](http://latex.codecogs.com/gif.latex?w(i,&space;u)&space;=&space;[i&space;\leq&space;k]w(i);&space;a(u;&space;X^l,&space;k)&space;=&space;argmax_{y\epsilon&space;Y}&space;\sum^k_{i&space;=&space;1}{[y^i_{u}&space;=&space;y]}w(i))
-возьмем за вес w(i) = q^i,q\epsilon (0,1), и его же будем перебирать по LOO при фиксированном k = 6, получим результат:
+возьмем за вес ![equation](http://latex.codecogs.com/gif.latex?w(i)&space;=&space;q^i,q\epsilon&space;(0,1)), и его же будем перебирать по LOO при фиксированном k = 6, получим результат:
 ![](https://github.com/Goncharoff/SMPR/blob/master/imgs/loo_kwnn.png)
 Видем что лучший результат при k = 6 и q = 1. Равен 0.33, что примерно 96% успешных классификаций.
 Зачем использовать kwNN если там больше расчетов? В задачах с числом классов 3 и более нечётность уже не помогает и сутации неодназначности могут возниктаь. Тогда на помошь приходят веса, и объект классифицируется к тому классу, чей суммарны вес больше среди k соседий.
