@@ -108,7 +108,7 @@ Petal.Length Petal.Width    Species
 
 2) Если признаки имеют одинаковые дисперсии, ![equation](http://latex.codecogs.com/gif.latex?\sum&space;=&space;\sigma^2I_n)
 
-3)Если признаки коррелированы, то матрица ![equation](http://latex.codecogs.com/gif.latex?\sum) не диагональна и линии уровня имеют форму эллипсоидов, оси которых повернуты ( направлены вдоль собственных векторов матрицы ![equation](http://latex.codecogs.com/gif.latex?\sum) ) относительно исходной системы координат.
+3) Если признаки коррелированы, то матрица ![equation](http://latex.codecogs.com/gif.latex?\sum) не диагональна и линии уровня имеют форму эллипсоидов, оси которых повернуты ( направлены вдоль собственных векторов матрицы ![equation](http://latex.codecogs.com/gif.latex?\sum) ) относительно исходной системы координат.
 
 С помощью ортогонального преобразования ![equation](http://latex.codecogs.com/gif.latex?x'=V^Tx,&space;V&space;=&space;(v_1,...,v_n)). - ортогональные собственные векторы матрицы ![equation](http://latex.codecogs.com/gif.latex?\sum), можно перейти к первому случаю.
 
