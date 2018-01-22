@@ -76,4 +76,4 @@
 Будем ипсользовать virginica и versicolor. По 3 и 4 параметрам datafram'а
 
 В результате получим: 
-![](https://github.com/Goncharoff/SMPR/blob/master/imgs/SVM_resuls.png)
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/SVM_resul.png)
