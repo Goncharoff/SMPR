@@ -55,20 +55,50 @@
 
 Выбранные объекты:
 Petal.Length Petal.Width    Species
+
+
 1             1.4         0.2     setosa
+
+
 51            4.7         1.4 versicolor
+
+
 101           6.0         2.5  virginica
+
+
 511           4.7         1.4 versicolor
+
+
 11            1.4         0.2     setosa
+
+
 512           4.7         1.4 versicolor
+
+
 12            1.4         0.2     setosa
+
+
 1011          6.0         2.5  virginica
+
+
 1012          6.0         2.5  virginica
+
+
 58            3.3         1.0 versicolor
+
+
 1013          6.0         2.5  virginica
+
+
 102           5.1         1.9  virginica
+
+
 1021          5.1         1.9  virginica
+
+
 1022          5.1         1.9  virginica
+
+
 1023          5.1         1.9  virginica
 
 Проверяя на них kNN получим такой же результат, в k=6, с успешной долей ответов 96%. Но по сравнению с обычной kNN намного быстрее.(очевидно, ведь выборка уменьшилась).
