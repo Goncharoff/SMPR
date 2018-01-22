@@ -57,4 +57,4 @@
 
 ### Итоговый график для трех классификаторов:
 
-![](https://github.com/Goncharoff/SMPR/blob/master/imgs/all results.png)
+![](https://github.com/Goncharoff/SMPR/blob/master/imgs/all_results.png)
